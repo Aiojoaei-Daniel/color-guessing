@@ -1,13 +1,93 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --clr-primary: #645cff;
+  --clr-primary-dark: #554ee1;
+  --clr-grey-1: #102a42;
+  --clr-grey-10: #f1f5f8;
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-green: green;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-container {
+  height: 60%;
+}
+
+.color {
+  height: 300px;
+  width: 400px;
+  transition: 0.5s;
+  border-radius: 3px;
+  box-shadow: 0px 0px 15px -4px;
+  background-color: var(--clr-grey-1);
+}
+
+.options {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.options > button:hover {
+  color: var(--clr-white);
+  background-color: var(--clr-primary-dark);
+}
+.options > button {
+  width: 32%;
+  height: 50%;
+  border-radius: 3px;
+  color: var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+  border-top: 2px solid var(--clr-primary);
+  border-bottom: 2px solid var(--clr-primary);
+  background-color: var(--clr-grey-10);
+}
+
+.message-container {
+  height: 10%;
+  display: flex;
+}
+.wrong,
+.correct {
+  width: 100%;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  letter-spacing: var(--spacing);
+}
+
+.wrong {
+  color: var(--clr-red-dark);
+}
+
+.correct {
+  color: var(--clr-green);
 }
