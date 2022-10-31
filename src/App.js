@@ -1,14 +1,10 @@
 import { useState, useEffect } from "react";
 
 import { getRandomColor } from "./getRandomColor";
-
-const ANSWER = {
-  CORRECT: "CORRECT ANSWER!",
-  WRONG: "WRONG ANSWER!",
-};
+import { MAX_INDEX, ANSWER } from "./copy";
 
 function App() {
-  const randomIndex = Math.floor(Math.random() * 3);
+  const randomIndex = Math.floor(Math.random() * MAX_INDEX);
 
   const [correctIndex, setCorrectIndex] = useState(randomIndex);
   const [colors, setColors] = useState([]);
@@ -22,13 +18,15 @@ function App() {
   const getRandomColors = () => {
     setTimeout(() => {
       setColors([]);
-      for (let index = 0; index < 3; index++) {
+
+      for (let index = 0; index < MAX_INDEX; index++) {
         const color = getRandomColor();
         setColors((prev) => [...prev, color]);
       }
+
       setIsCorrect(false);
 
-      const randomIndex = Math.floor(Math.random() * 3);
+      const randomIndex = Math.floor(Math.random() * MAX_INDEX);
       setCorrectIndex(randomIndex);
     }, 1000);
   };
