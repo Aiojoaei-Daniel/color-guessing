@@ -92,3 +92,25 @@ body {
 .correct {
   color: var(--clr-green);
 }
+
+@media screen and (max-width: 450px) {
+  .color {
+    height: 200px;
+    width: 250px;
+  }
+}
+@media screen and (max-height: 500px) {
+  .color-container {
+    height: 100%;
+  }
+  .color {
+    height: 200px;
+    width: 350px;
+  }
+  .message-container {
+    margin-top: 10px;
+  }
+  .options {
+    margin-bottom: 15px;
+  }
+}
